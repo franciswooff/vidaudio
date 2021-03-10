@@ -16,7 +16,7 @@ The test as you have downloaded it in step 1 includes placeholder/example audio 
 Note that as stressed in the guide you need to upload the **contents** of your test folder to the server (rather than the folder itself).  
 See step 7 for addresses to use in a web browser to see the uploaded project.
 
-3.	Prepare the video & audio files you will use in your test. The project is set up to work with .mp4 video files & .wav audiofiles. Other file formats are possible, the code to be downloaded in step 2 will need to be adapted for these.  
+3.	Prepare the video & audio files you will use in your test. The project is set up to work with .mp4 video files & .wav audiofiles. Other file formats are possible, the code downloaded in step 2 can be adapted to accomodate.  
 .mp4 video is a good choice for widest browser compatibility, if you move to another video codec this may restrict this. Make the videos as small (quality/datarate) as possible to minimise size on the server & connection bandwidth (minimising delays over the internet & use of the test subject’s broadband/phone data plan). A 360px 24fps low datarate video is a typical good choice for use with this project.  
 Adobe MediaEncoder is one useful application for changing sizes, codecs, datarates etc. of audio & video files. If you don’t have access to this VLC can also carry out these functions https://www.vlchelp.com/convert-video-format/  
 .wav format is chosen for audio as it best matches the requirements of the University of Salford students the project was created for. It is not the best choice in terms of size on the server, connection bandwidth etc. To change the format the test works with to (e.g.) mp3 edit the single occurrence each in preview.php & page.php of the text “wav” to “mp3”  
