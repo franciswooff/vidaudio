@@ -48,13 +48,14 @@ Congratulations! You should have a working test which you can use with no furthe
 
 Additional functionality/features to be added:
 1.	Add further instructions on GitHub
-2.	Randomisation of audio track to fader allocation
-3.	Option to turn above (2) off for specified pages
-4.	Option to have an extra introductory (instructions etc.) page to any test page
-5.	Option to make participant number mandatory
-6.	Option to randomise order of test pages
-7.	Improve responsiveness- presentation smaller screen - e.g. poor breaking of "I agree" label on test start page on mobile
-8.	Requests for input from UoS students:  
+2.	Preview page to show scale labels & extra custom text from 8 & 9 above
+3.	Randomisation of audio track to fader allocation
+4.	Option to turn above randomisation off for specified pages
+5.	Option to have an extra introductory (instructions etc.) page to any test page
+6.	Option to make participant number mandatory
+7.	Option to randomise order of test pages
+8.	Improve responsiveness- presentation smaller screen - e.g. poor breaking of "I agree" label on test start page on mobile
+9.	Requests for input from UoS students:  
 improve wording of "I agree" label on start page?
 improve wording of "audio variation" etc. on test page
 
