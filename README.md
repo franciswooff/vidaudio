@@ -45,6 +45,7 @@ Congratulations! You should have a working test which you can use with no furthe
 (further instructions to be added here)  
 8.	How to add a scale label to your faders  
 9.	How to include extra custom text on any test page
+10.	Add instructions for editing start & end pages where students wish to include custom text there
 
 Additional functionality/features to be added:
 1.	Add further instructions on GitHub
@@ -57,6 +58,5 @@ Additional functionality/features to be added:
 8.	Check responsiveness (presentation on mobile screen)
 9.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
 10.	Requests for input from UoS students:  
-improve wording of "I agree" label on start page?
-improve wording of "audio variation" etc. on test page
-
+improve wording of "I agree" label on start page?  
+improve wording of "audio variation" etc. on test page  
