@@ -44,7 +44,7 @@ Congratulations! You should have a working test which you can use with no furthe
 
 (further instructions to be added here)  
 8.	How to add a scale label to your faders  
-9.	How to include extra custom text on any test page
+9.	How to include extra custom text on any test page  
 10.	Add instructions for editing start & end pages where students wish to include custom text there
 
 Additional functionality/features to be added:
