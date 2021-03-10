@@ -22,27 +22,27 @@ Adobe MediaEncoder is one useful application for changing sizes, codecs, datarat
 .wav format is chosen for audio as it best matches the requirements of the University of Salford students the project was created for. It is not the best choice in terms of size on the server, connection bandwidth etc. To change the format the test works with to (e.g.) mp3 edit the single occurrence each in preview.php & page.php of the text “wav” to “mp3”  
 The test accommodates your choice of number of videos to be used. The test accommodates your choice of number of audio tracks to be available per video, however in the initial version that number has to be the same across your videos (e.g. 4 audio tracks with each video across the test). The length (time) of your different videos does not need to be the same, but the length (time) of the audio tracks to be used with a given video must match that of the video & each other.
 
-4.	Place your video files in the “videofiles” folder inside your test folder (delete or overwrite the placeholder/example files already there). The files must be named according to the following convention:
-  1.mp4
-  2.mp4
-  3.mp4
+4.	Place your video files in the “videofiles” folder inside your test folder (delete or overwrite the placeholder/example files already there). The files must be named according to the following convention:  
+  1.mp4  
+  2.mp4  
+  3.mp4  
   etc.
 
-5.	Place your audio files in the “audiofiles” folder inside your test folder (delete or overwrite the placeholder/example files already there). The files must be named according to the following convention:
-  1_1.wav
-  1_2.wav
-  2_1.wav
+5.	Place your audio files in the “audiofiles” folder inside your test folder (delete or overwrite the placeholder/example files already there). The files must be named according to the following convention:  
+  1_1.wav  
+  1_2.wav  
+  2_1.wav  
   etc.  
 Where 1_2.wav is the first video’s second audio file, 2_1.wav the second video’s first audio file etc.
 
 6.	Edit the text file EDITME.txt in your test folder. This file “tells” the test the number of videos to be used in the test (first line of the file), the number of audio tracks with each video (second line of the file) & the e-mail address the test results are to be sent to (third line of the file). Easiest to open the file & see how it looks before editing - instructions are also included in the file itself & should be easy to follow in that context.
 
-7.	Upload your test to the server (see item 2 in these instructions) - or if you already had a “trial run” at that as in step 2 replace the example video & audio files with the ones you have added to your folders in steps 4 & 5 & the EDITME.txt file with the new version from step 6. Enter your webserver account address followed by /preview.php (e.g. http://abc123.poseidon.salford.ac.uk/preview.php) in a browser to check your files are on the server & correctly named etc in the Preview page of the test. Your webserver account address without any page specified (e.g. http://abc123.poseidon.salford.ac.uk) will take you to the start page of the test used by the test subject.
+7.	Upload your test to the server (see item 2 in these instructions) - or if you already had a “trial run” as recommended in step 2 replace the example video & audio files with the ones you have added to your folders in steps 4 & 5 & the EDITME.txt file with the new version from step 6.  
+Enter your webserver account address followed by /preview.php (e.g. http://abc123.poseidon.salford.ac.uk/preview.php) in a browser to check your files are on the server & correctly named etc. in the preview page of the test. Your webserver account address without any page specified (e.g. http://abc123.poseidon.salford.ac.uk) will take you to the start page of the test as used by the test subject.
 
 Congratulations! You should have a working test which you can use with no further steps (hopefully the format the results arrive in via e-mail is self-explanatory). The following steps provide additional functions which you may use, but do not have to:
 
-FURTHER INSTRUCTIONS TO BE ADDED
-
+(further instructions to be added here)
 8.	How to add a scale label to your faders 
 9.	How to include extra custom text on any test page
 
@@ -51,4 +51,4 @@ Additional functionality/features to be added:
 2.	Randomisation of audio track to fader allocation
 3.	Option to turn above (2) off for specified pages
 4.	Option to have an extra introductory (instructions etc.) page to any test page 
-5.	Randomisation of order of test pages
+5.	Option to randomise order of test pages
