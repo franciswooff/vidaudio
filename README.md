@@ -42,8 +42,8 @@ Enter your webserver account address followed by /preview.php (e.g. http://abc12
 
 Congratulations! You should have a working test which you can use with no further steps (hopefully the format the results arrive in via e-mail is self-explanatory). The following steps provide additional functions which you may use, but do not have to:
 
-(further instructions to be added here)
-8.	How to add a scale label to your faders 
+(further instructions to be added here)  
+8.	How to add a scale label to your faders  
 9.	How to include extra custom text on any test page
 
 Additional functionality/features to be added:
