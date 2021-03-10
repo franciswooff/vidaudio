@@ -1,5 +1,5 @@
 # vidaudio-3
-Template to support students of the University of Salford in hosting comparative audio tests online
+Template to support students at the University of Salford in hosting comparative audio tests online
 
 This repository supersedes 2 earlier versions (audiotest-1 & audiotest-2) in providing a solution for comparative testing of different audio tracks synchronised to a video element*. The earlier versions worked via switching between audio tracks embedded with the video file. If wider browser support of html 5 audioTracks property (used in version 1) becomes available this would be the best solution. As there seems little progress with this (e.g. the feature has been behind an enable-experimental-features flag in Chrome from v37 to current-at-time-of writing v89) v2 was created. v2 used a 3rd party video host, whose API properly supports video audio track switching. However there are some downsides (limit on number of videos which can be used, delays in track loading & switching) to this 3rd party approach.
 
@@ -50,13 +50,14 @@ Congratulations! You should have a working test which you can use with no furthe
 Additional functionality/features to be added:
 1.	Add further instructions on GitHub
 2.	Preview page to show scale labels & extra custom text from 8 & 9 above
-3.	Randomisation of audio track to fader allocation
-4.	Option to turn above randomisation off for specified pages
-5.	Option to have an extra introductory (instructions etc.) page to any test page
-6.	Option to make participant number mandatory
-7.	Option to randomise order of test pages
-8.	Check responsiveness (presentation on mobile screen)
-9.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
-10.	Requests for input from UoS students:  
+3.	Extend extra custom text function to allow multiple lines, breaks & paragraphs
+4.	Randomisation of audio track to fader allocation
+5.	Option to turn above randomisation off for specified pages
+6.	Option to have an extra introductory (instructions etc.) page to any test page
+7.	Option to make participant number mandatory
+8.	Option to randomise order of test pages
+9.	Check responsiveness (presentation on mobile screen)
+10.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
+11.	Requests for input from UoS students:  
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
