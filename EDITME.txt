@@ -1,0 +1,9 @@
+2
+3
+you@edu.salford.ac.uk
+
+Edit the three lines above to your values:
+The first line is the number of videos in your test.
+The second line is the number of audio tracks used with each video in your test.
+The third line is the e-mail address you wish the test results to be sent to.
+n.b. the 2 numbers & mail address must be alone on a line each & those lines must be lines 1, 2 & 3

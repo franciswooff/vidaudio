@@ -1,0 +1,52 @@
+video, audio, form, .channel{
+display:inline-block
+}
+video, forml{
+vertical-align:top
+}
+video{
+max-width:50rem;
+height:auto;
+margin-right:0.2rem
+}
+form{
+background-color:darkgray;
+border-radius:0.4rem
+}
+.cntr{
+text-align:center;
+padding:0.6rem 0 0.1rem
+}
+img:first-child{
+padding-right:2rem
+}
+.channel{
+margin:0.3rem;
+text-align: center;
+}
+.channel:last-of-type{
+margin-right:0
+}
+input[type="range"]{
+appearance:slider-vertical;
+display:block;
+pointer-events:none;
+height:11rem;
+width:3rem
+}
+input[type="range"], span{
+margin:0.5rem 0
+}
+span{
+background-color:gray
+}
+input[type="submit"]{
+display:block;
+margin:1rem auto
+}
+table{
+display:inline-table;
+vertical-align: top;
+height:12.3rem;
+margin-right:0.4rem
+}

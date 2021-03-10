@@ -1,0 +1,13 @@
+main{max-width:94%}
+h2{
+font-size:1.2rem;
+margin-bottom:1rem
+}
+b{font-size:1.2rem}
+label{
+display:block;
+margin-bottom:1rem;
+font-size:1.1rem;
+font-weight:700
+}
+.sml{font-size:0.7rem}

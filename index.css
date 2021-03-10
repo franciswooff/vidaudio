@@ -1,0 +1,12 @@
+main{
+max-width:70%
+}
+label{
+display:block
+}
+input{
+margin:1rem 1rem 0 0
+}
+label:last-of-type{
+font-size:0.9rem
+}

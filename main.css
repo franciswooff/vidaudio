@@ -1,0 +1,35 @@
+*{
+margin:0;
+padding:0;
+text-decoration:none
+}
+html{
+font-size:100%
+}
+body{
+background-color:#c8c8ca;
+font-family:Verdana,Geneva,sans-serif
+}
+main{
+margin:0 auto;
+max-width:86%
+}
+h1{
+margin:0.6rem auto;
+color:white
+}
+p{margin-bottom:1rem}
+a{color:white}
+input[type="submit"]{
+padding:0.1rem;
+border-radius:0.3rem;
+background-color:dodgerblue;
+/*actual #005CC8*/
+}
+header{
+font-size:0.7rem
+}
+footer{
+margin-top:3rem;
+font-size:0.8rem
+}
