@@ -54,8 +54,9 @@ Additional functionality/features to be added:
 5.	Option to have an extra introductory (instructions etc.) page to any test page
 6.	Option to make participant number mandatory
 7.	Option to randomise order of test pages
-8.	Improve responsiveness- presentation smaller screen - e.g. poor breaking of "I agree" label on test start page on mobile
-9.	Requests for input from UoS students:  
+8.	Check responsiveness (presentation on mobile screen)
+9.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
+10.	Requests for input from UoS students:  
 improve wording of "I agree" label on start page?
 improve wording of "audio variation" etc. on test page
 
