@@ -35,9 +35,7 @@ Adjust the slider to comparatively rate the variation<br>
 Once you are happy with your slider settings comparison click "submit" to move to the next video</p>
 <p>';
 
-$expara = fopen('extras/'.$cntr.'.txt', 'r');
-echo fgets($expara);
-fclose('extras/'.$cntr.'.txt');
+echo file_get_contents('extras/'.$cntr.'.txt');
 
 echo '</p>
 <video src="videofiles/'.$cntr.'.mp4" type="video/mp4" muted loop></video>
