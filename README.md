@@ -50,7 +50,7 @@ Congratulations! You should have a working test which you can use with no furthe
 Additional functionality/features to be added:
 1.	Add further instructions on GitHub
 2.	Preview page to show scale labels & extra custom text from 8 & 9 above
-3.	Extend extra custom text function to allow multiple lines, breaks & paragraphs
+3.	~~Extend extra custom text function to allow multiple lines, breaks & paragraphs~~
 4.	Randomisation of audio track to fader allocation
 5.	Option to turn above randomisation off for specified pages
 6.	Option to have an extra introductory (instructions etc.) page to any test page
