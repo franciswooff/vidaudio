@@ -23,22 +23,12 @@ img[1].addEventListener('click', () => {
     aud[i].pause();
   }
   vid.pause();
-//  prnt();
 });
-
-//prnt = () => {
-//  nmbx[0].value = vt;
-//  nmbx[1].value = at;
-//};
 
 aud[0].addEventListener('timeupdate', () => {
   at = aud[0].currentTime;
   vid.currentTime = at;
   vt = vid.currentTime;
-//  let vtr = vt.toFixed(1);
-//  nmbx[2].value = vtr;
-//  let atr = at.toFixed(1);
-//  nmbx[3].value = atr;
 });
 
 spn.forEach(prsd);
