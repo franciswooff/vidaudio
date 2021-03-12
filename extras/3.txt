@@ -1,0 +1,3 @@
+This extra text is formatted so<br>
+This line appears on a separate line from the one above and</p>
+<p>This line appears as a separate paragraph from the one above
