@@ -49,7 +49,7 @@ Congratulations! You should have a working test which you can use with no furthe
 
 Additional functionality/features to be added:
 1.	Add further instructions on GitHub
-2.	Preview page to show scale labels & extra custom text from 8 & 9 above
+2.	~~Preview page to show scale labels & extra custom text from 8 & 9 above~~
 3.	~~Extend extra custom text function to allow multiple lines, breaks & paragraphs~~
 4.	Randomisation of audio track to fader allocation
 5.	Option to turn above randomisation off for specified pages
@@ -61,5 +61,6 @@ Additional functionality/features to be added:
 11.	Requests for input from UoS students:  
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
+should videos autoplay?  
 12. Add comment re use of dedicated hard ware play button to instructions
 13. Comment on likelihood of branches giving variations in functionality, e.g. support of still images or 7 point scale label
