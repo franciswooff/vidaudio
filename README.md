@@ -62,5 +62,6 @@ Additional functionality/features to be added:
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
 should videos autoplay?  
+whether to include sample labels & extra text files  
 12. Add comment re use of dedicated hard ware play button to instructions
 13. Comment on likelihood of branches giving variations in functionality, e.g. support of still images or 7 point scale label
