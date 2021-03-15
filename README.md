@@ -68,17 +68,18 @@ Additional functionality/features to be added:
 1.	~~Add further instructions on GitHub~~
 2.	~~Preview page to show scale labels & extra custom text from 8 & 9 above~~
 3.	~~Extend extra custom text function to allow multiple lines, breaks & paragraphs~~
-4.	Randomisation of audio track to fader allocation
-5.	Option to turn above randomisation off for specified pages
-6.	Option to have an extra introductory (instructions etc.) page to any test page
-7.	Option to make participant number mandatory
-8.	Option to randomise order of test pages
-9.	Check responsiveness (presentation on mobile screen)
-10.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
-11.	Requests for input from UoS students:  
+4.	Recommend setting for VLC encoder
+5.	Randomisation of audio track to fader allocation
+6.	Option to turn above randomisation off for specified pages
+7.	Option to have an extra introductory (instructions etc.) page to any test page
+8.	Option to make participant number mandatory
+9.	Option to randomise order of test pages
+10.	Check responsiveness (presentation on mobile screen)
+11.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
+12.	Requests for input from UoS students:  
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
 should videos autoplay?  
-whether to include sample labels & extra text files  
+whether to include sample labels & extra text files in main prject forlder or restructure  
 12. Add comment re use of dedicated hard ware play button to instructions
 13. Comment on likelihood of branches giving variations in functionality, e.g. support of still images or 7 point scale label
