@@ -69,7 +69,7 @@ Additional functionality/features to be added:
 2.	~~Preview page to show scale labels & extra custom text from 8 & 9 above~~
 3.	~~Extend extra custom text function to allow multiple lines, breaks & paragraphs~~
 4.	Recommend setting for VLC encoder
-5.	Randomisation of audio track to fader allocation
+5.	Randomisation of audio track to slider allocation
 6.	Option to turn above randomisation off for specified pages
 7.	Option to have an extra introductory (instructions etc.) page to any test page
 8.	Option to make participant number mandatory
@@ -80,6 +80,5 @@ Additional functionality/features to be added:
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
 should videos autoplay?  
-whether to include sample labels & extra text files in main prject forlder or restructure  
-12. Add comment re use of dedicated hard ware play button to instructions
-13. Comment on likelihood of branches giving variations in functionality, e.g. support of still images or 7 point scale label
+whether to include sample labels & extra text files in main prject forlder or restructure
+13. Add comment re use of dedicated hardware play button to instructions
