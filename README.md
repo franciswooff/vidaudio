@@ -80,5 +80,5 @@ Additional functionality/features to be added:
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
 should videos autoplay?  
-whether to include sample labels & extra text files in main prject forlder or restructure
+whether to include sample labels & extra text files in main project folder or restructure
 13. Add comment re use of dedicated hardware play button to instructions
