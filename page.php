@@ -33,15 +33,12 @@ echo '<!doctype html>
 <p>Click on the number below each slider to select a different audio variation(?)<br>
 Adjust the slider to comparatively rate the variation<br>
 Once you are happy with your slider settings comparison click "submit" to move to the next video</p>
-<p>';
+<p>'.file_get_contents('extras/'.$cntr.'.txt').'</p>
 
-echo file_get_contents('extras/'.$cntr.'.txt');
-
-echo '</p>
 <video src="videofiles/'.$cntr.'.mp4" type="video/mp4" muted loop></video>
 
 <form action="mid.php" method="post">
-  <div class="cntr">
+  <div class="centr">
     <img src="images/ply.png" alt="play icon"><img src="images/pse.png" alt="pause icon">
   </div>
   ';
