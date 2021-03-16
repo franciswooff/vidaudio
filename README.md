@@ -18,7 +18,7 @@ See step 7 for addresses to use in a web browser to see the uploaded project.
 
 3.	Prepare the video & audio files you will use in your test. The project is set up to work with .mp4 video files & .wav audiofiles. Other file formats are possible, the code downloaded in step 2 can be adapted to accomodate.  
 .mp4 video is a good choice for widest browser compatibility, if you move to another video codec this may restrict this. Make the videos as small (quality/datarate) as possible to minimise size on the server & connection bandwidth (minimising delays over the internet & use of the test subject’s broadband/phone data plan). A 360px 24fps low datarate video is a typical good choice for use with this project.  
-Adobe MediaEncoder is one useful application for changing sizes, codecs, datarates etc. of audio & video files. If you don’t have access to this VLC can also carry out these functions https://www.vlchelp.com/convert-video-format/  
+Adobe MediaEncoder is one useful application for changing sizes, codecs, datarates etc. of audio & video files. If you don’t have access to this VLC can also carry out these functions https://www.vlchelp.com/convert-video-format/. If using the conversion function in VLC preset profiles like "Video for Android SD High" or"Video for YouTube SD" are suitable, but these tie the output to a fixed aspect ratio that may not match your source (changing the output width to automatic will avoid stretching). Video datarate can be reduced further to 200kbps & audio rate to 64kbps or lower (as this audio will not be heard, however do not untick the "audio codec" box to remove audio alogether).  
 .wav format is chosen for audio as it best matches the requirements of the University of Salford students the project was created for. It is not the best choice in terms of size on the server, connection bandwidth etc. To change the format the test works with to (e.g.) mp3 edit the single occurrence each in preview.php & page.php of the text “wav” to “mp3”  
 The test accommodates your choice of number of videos to be used. The test accommodates your choice of number of audio tracks to be available per video, however in the initial version that number has to be the same across your videos (e.g. 4 audio tracks with each video across the test). The length (time) of your different videos does not need to be the same, but the length (time) of the audio tracks to be used with a given video must match that of the video & each other.
 
@@ -68,7 +68,7 @@ Additional functionality/features to be added:
 1.	~~Add further instructions on GitHub~~
 2.	~~Preview page to show scale labels & extra custom text from 8 & 9 above~~
 3.	~~Extend extra custom text function to allow multiple lines, breaks & paragraphs~~
-4.	Recommend setting for VLC encoder
+4.	~~Recommend setting for VLC encoder~~
 5.	Randomisation of audio track to slider allocation
 6.	Option to turn above randomisation off for specified pages
 7.	Option to have an extra introductory (instructions etc.) page to any test page
