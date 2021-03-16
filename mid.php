@@ -1,5 +1,4 @@
 <?php
-$resa = $resb = $resc = "";
 
 $editme = fopen("EDITME.txt", "r") or die('<p>Unable to open your EDITME.txt file</p>');
 $vidnum=fgets($editme);
