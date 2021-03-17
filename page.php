@@ -80,8 +80,27 @@ for ($f = 1; $f <= $trxnum; $f++){
   </div>
   ';
 }
+
+$tblc = fopen('labels/'.$cntr.'.txt', 'r');
+$t1 = fgets($tblc);
+$t2 = fgets($tblc);
+$t3 = fgets($tblc);
+$t4 = fgets($tblc);
+$t5 = fgets($tblc);
+fclose('labels/'.$cntr.'.txt');
+
+echo '  <table>
+    <tr><td>'.$t1.'</td></tr>
+    <tr><td>'.$t2.'</td></tr>
+    <tr><td>'.$t3.'</td></tr>
+    <tr><td>'.$t4.'</td></tr>
+    <tr><td>'.$t5.'</td></tr>
+  </table>
+';
+
 $cntr ++;
 $_SESSION["vidcount"]=$cntr;
+
 ?>
 <input type="submit" value="Submit" name="page">
 </form>
