@@ -69,7 +69,7 @@ Additional functionality/features to be added:
 2.	~~Preview page to show scale labels & extra custom text from 8 & 9 above~~
 3.	~~Extend extra custom text function to allow multiple lines, breaks & paragraphs~~
 4.	~~Recommend setting for VLC encoder~~
-5.	Randomisation of audio track to slider allocation
+5.	~~Randomisation of audio track to slider allocation~~
 6.	Option to turn above randomisation off for specified pages
 7.	Option to have an extra introductory (instructions etc.) page to any test page
 8.	Option to make participant number mandatory
