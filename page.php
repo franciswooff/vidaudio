@@ -13,13 +13,15 @@ if(is_null($cntr)){
   $_SESSION["vidcount"]=$cntr;
 }
 
+$trxshufl = $_SESSION["tshuf"];
+
 $vidnoforres = $cntr-1;
 if (isset($_POST['page'])) {
   for ($f = 1; $f <= $trxnum; $f++){
-    $addr = $vidnoforres.'_'.$f;
+    $addr = $vidnoforres.'_'.$trxshufl[$f-1];
     $res = $_POST["fdr".$f];
     $comp = $addr.'_'.$res;
-    $_SESSION[$addr]=$comp;
+    $_SESSION[$addr] = $comp;
   }
 }
 
@@ -63,8 +65,12 @@ Once you are happy with your slider settings comparison click "submit" to move t
 <video src="videofiles/'.$cntr.'.mp4" type="video/mp4" muted loop></video>
 ';
 
+$trxshufl = range(1,$trxnum);
+shuffle($trxshufl);
+$_SESSION["tshuf"]=$trxshufl;
+
 for ($a = 1; $a <= $trxnum; $a++){
-  echo '<audio muted loop><source src="audiofiles/'.$cntr.'_'.$a.'.wav" type="audio/mpeg"></audio>';
+  echo '<audio muted loop><source src="audiofiles/'.$cntr.'_'.$trxshufl[$a-1].'.wav" type="audio/mpeg"></audio>';
   }
 
 echo '<form action="page.php" method="post">
