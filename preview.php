@@ -34,7 +34,8 @@ echo "<p>Your EDITME text file specifies you will use <b>".$vidnum."</b> videos 
 for ($v = 1; $v <= $vidnum; $v++){
   echo '<video controls><source src="videofiles/'.$v.'.mp4" type="video/mp4"></video>
   <label>Video '.$v.'</label>
-  <p>The following audio tracks will be appear with this video</p>';
+  
+  <p>The following audio tracks will be appear with this video (randomly linked to rating sliders)</p>';
   for ($a = 1; $a <= $trxnum; $a++){
     echo '<audio controls><source src="audiofiles/'.$v.'_'.$a.'.wav" type="audio/mpeg"></audio>
     <label>Audio '.$v.'_'.$a.'</label>
