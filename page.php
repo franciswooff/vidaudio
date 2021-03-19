@@ -1,7 +1,9 @@
 <?php
 $editme = fopen('EDITME.txt', 'r') or die('<p>Unable to open your EDITME.txt file</p>');
-$vidnum=fgets($editme);
-$trxnum=fgets($editme);
+$vidnum = fgets($editme);
+$trxnum = fgets($editme);
+fgets($editme);
+$csv = fgetcsv($editme,300);
 fclose('EDITME.txt');
 
 session_set_cookie_params(3000,"/");
@@ -66,12 +68,18 @@ Once you are happy with your slider settings comparison click "submit" to move t
 ';
 
 $trxshufl = range(1,$trxnum);
-shuffle($trxshufl);
+$serus = array_search($cntr,$csv);
+
+if (!is_int($serus)) {
+  shuffle($trxshufl);
+}
+
 $_SESSION["tshuf"]=$trxshufl;
 
 for ($a = 1; $a <= $trxnum; $a++){
-  echo '<audio muted loop><source src="audiofiles/'.$cntr.'_'.$trxshufl[$a-1].'.wav" type="audio/mpeg"></audio>';
-  }
+  echo '<audio muted loop><source src="audiofiles/'.$cntr.'_'.$trxshufl[$a-1].'.wav" type="audio/mpeg"></audio>
+  ';
+}
 
 echo '<form action="page.php" method="post">
   <div class="centr">
