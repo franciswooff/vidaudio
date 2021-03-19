@@ -40,29 +40,30 @@ Where 1_2.wav is the first video’s second audio file, 2_1.wav the second video
 7.	Upload your test to the server (see item 2 in these instructions) - or if you already had a “trial run” as recommended in step 2 replace the example video & audio files with the ones you have added to your folders in steps 4 & 5 & the EDITME.txt file with the new version from step 6.  
 Enter your webserver account address followed by /preview.php (e.g. http://abc123.poseidon.salford.ac.uk/preview.php) in a browser to check your files are on the server & correctly named etc. in the preview page of the test. Your webserver account address without any page specified (e.g. http://abc123.poseidon.salford.ac.uk) will take you to the start page of the test as used by the test subject.
 
-Congratulations! You should have a working test which you can use with no further steps* (hopefully the format the results arrive in via e-mail is self-explanatory). The following steps provide additional functions which you may use, but do not have to:  
+Congratulations! You should have a working test which you can use with no further steps* Hopefully the format the results arrive in via e-mail is self-explanatory (& easy to bring into e.g. Excel, use the underscore as a separator). The following steps provide additional functions which you may use, but do not have to:  
 \* note however, that if you are not using labels or custom text on test pages, as described in steps 8 & 9, you will need to delete the example files in the “labels” & “extras” folders, detail (if needed) is provided as step 10
 
-8.	**How to add a scale label to your sliders** - somewhat similar process to setting your numbers of videos & e-mail etc. via editing a text file. To add a scale to the sliders on a particular page place a text file in the folder “labels”. A scale label for your first test page would be “1.txt”, for the third page would be “3.txt” etc. (no issue for a page to have no label text file allocated).  
+8.	**To add a scale label to your sliders** - somewhat similar process to setting your numbers of videos & e-mail etc. via editing a text file. To add a scale to the sliders on a particular page place a text file in the folder “labels”. A scale label for your first test page would be “1.txt”, for the third page would be “3.txt” etc. (no issue for a page to have no label text file allocated).  
 The label format is 5 rows, but you can use whichever of these you like - so you could use only the top & bottom rows to give labels to each end of the slider, top, middle & bottom for a 3 point scale etc. Each label is a separate line in the text file & you need to leave lines blank where you aren’t using a 5 point scale. Top & bottom labels should have 3 blanks lines between them. A 3 point scale would be top label on the first line, blank line, middle label on the third line, blank line, bottom label on the fifth line. 5 point scale = lines 1-5 of the text file, with the top label on the first line.  
 The labels folder in your downloaded project folder contains example labels for pages 2 & 3. Check the format of these as a guide. You will need to either delete these files if you are not using labels on pages 2 & 3 or edit them to your labels if you are.
 
-9.	**How to include extra custom text on any test page** - similar to 8. above. To add additional text, appearing as a paragraph or paragraphs below the standard instructions on a particular page place a text file in the folder “extras”. The text for your first test page would be “1.txt”, for the third page would be “3.txt” etc. (no issue for a page to have no text file allocated).  
+9.	**To include extra custom text on any test page** - similar to 8. above. To add additional text, appearing as a paragraph or paragraphs below the standard instructions on a particular page place a text file in the folder “extras”. The text for your first test page would be “1.txt”, for the third page would be “3.txt” etc. (no issue for a page to have no text file allocated).  
 For a single paragraph without line breaks the format is simply the text in the text file = the text of that paragraph.  
 To insert a line break at any point use the code \<br>  Note that breaking to a new line in your text file will not break to a new line on the test page without use of this tag.  
 For multiple paragraphs it is necessary to use the html paragraph tags \<p> to start a paragraph & \</p> to end one. Note though that you don’t need to include these for starting your first paragraph or ending your last, as those tags are included in the default code of the page (enabling the single paragraph without tags use first detailed in this step).  
 The extras folder in your downloaded project folder contains example paragraphs for pages 1 & 3. Check the format of "3.txt" for examples of line break & paragraph break. You will need to either delete these files if you are not using labels on pages 1 & 3 or edit them to your text if you are.  
 
-10.	**Note that if you are not using labels or custom text on your test pages** you will need to clear the examples provided. This is best done by deleting the text files in the “labels” & “extras” folders (leaving those folders empty). If you prefer to delete the folders altogether this is fine too, but you’ll need to recreate them if you change your mind (a good middle ground would be to keep the local files & folders in your downloaded project folder, but not have them on the server).
+10.	**If you are not using labels or custom text on your test pages** you will need to clear the examples provided. This is best done by deleting the text files in the “labels” & “extras” folders (leaving those folders empty). If you prefer to delete the folders altogether this is fine too, but you’ll need to recreate them if you change your mind (a good middle ground would be to keep the local files & folders in your downloaded project folder, but not have them on the server).
 
-11.	**Further customisation of text on the pages of your test** - the actual test page or the start & end pages is also possible. This means venturing a little into the world of html text. For an introduction & reference see https://www.w3schools.com/html  
+11. **To turn off randomisation of linking audio tracks to rating sliders for specified pages** - by default the test pages randomise the order in which your audio tracks for that page/video are linked to the rating slider/switch button pair. If you wish to turn this randomisation off for any given page(s) - typically where you are providing a "training page" & so need the audio tracks to map consitently to the same slider/button pair - this can be done by including a 4th line to your EDITME.txt file specifying the page numbers separated by commas. Examples are shown in the EDITME.txt file.
+
+12.	**Further customisation of text on the pages of your test** (the actual test page or the start & end pages) is also possible. This means venturing a little into the world of html text. For an introduction & reference see https://www.w3schools.com/html  
 You don’t need a specialist code editing application to do this, you can edit with Notepad on Windows or TextEdit on Mac OS. It may be easier with something that colour codes the different parts of the code though. As well as code editing applications your Microsoft OneDrive will display the code like this if you view & edit the files online (via a web browswer).  
 The start page is “index.html”. To add a paragraph insert one in \<p> tags below the one that’s already there (you will see this place marked, along with some instructions, in the code of the page).  
-Editing the code of the test page “page.php” & the end page “end.php” is trickier, as php is more likely to “break” than html. To edit the standard instructions of the test page edit between the \<p> & \</p> tags on lines 33-35. If you wish to remove the standard instructions altogether delete lines 33-35. Note that in customising this way you are customising every test page, any customisation to an individual page’s instructions should be by the method in step 9.  
+Editing the code of the test page “page.php” & the end page “end.php” is trickier, as php is more likely to “break” than html. To edit the standard instructions of the test page edit between the \<p> & \</p> tags on lines 62-64. If you wish to remove the standard instructions altogether delete lines 62-64. Note that in customising this way you are customising every test page, any customisation to an individual page’s instructions should be by the method in step 9.  
 To edit the standard message on the end page either customise or replace the text between the \<p> & \</p> tags on line 16.  
 
-12.	**To extensively modify the test** - for example to swap the use of videos for still images or work with a 7 point slider scale - either follow the approach of step 11 (the pages likely to be concerned are “page.php” & “preview.php”) or if you are looking for something where the customisation is more to individual pages you might set the test up as closely as possible to what you want, copy the code of the pages to be changed (right click & “view source” in a browser), save these as new html files, perform the edits & incorporate them into your test.
-
+13.	**To extensively modify the test** - for example to swap the use of videos for still images or work with a 7 point slider scale - either follow the approach of step 11 (the pages likely to be concerned are “page.php” & “preview.php”) or if you are looking for something where the customisation is more to individual pages you might set the test up as closely as possible to what you want, copy the code of the pages to be changed (right click & “view source” in a browser), save these as new html files, perform the edits & incorporate them into your test.
 
 Additional functionality/features to be added:
 1.	~~Add further instructions on GitHub~~
@@ -70,7 +71,7 @@ Additional functionality/features to be added:
 3.	~~Extend extra custom text function to allow multiple lines, breaks & paragraphs~~
 4.	~~Recommend setting for VLC encoder~~
 5.	~~Randomisation of audio track to slider allocation~~
-6.	Option to turn above randomisation off for specified pages
+6.	~~Option to turn above randomisation off for specified pages~~
 7.	Option to have an extra introductory (instructions etc.) page to any test page
 8.	Option to make participant number mandatory
 9.	Option to randomise order of test pages
@@ -80,5 +81,6 @@ Additional functionality/features to be added:
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
 should videos autoplay?  
-whether to include sample labels & extra text files in main project folder or restructure
+whether to include sample labels & extra text files in main project folder or restructure  
+results mail can be formatted differently (order or separators) if preffered 
 13. Add comment re use of dedicated hardware play button to instructions
