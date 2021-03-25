@@ -4,15 +4,14 @@ you@edu.salford.ac.uk
 
 
 Edit the first three lines above to your values:
-
 The first line is the number of videos in your test.
 The second line is the number of audio tracks used with each video in your test.
 The third line is the e-mail address you wish the test results to be sent to.
-n.b. the 2 numbers & mail address must be alone on a line each & those lines must be lines 1, 2 & 3.
+n.b. the 2 numbers & mail address must be alone on a line each & those lines must be lines 1, 2 & 3
 
-Line 4 is optional. It's function is to turn off randomisation of linking audio tracks to rating sliders for the specified pages.
-The format is Comma Separated Values.
+Line 4 is optional. It's function is to turn off randomly linking audio track  to rating sliders for the specified pages.
+The format is of Comma Separated Values
 Example: regardless of how many pages you have, if you want to turn off randomisation on pages 1 & 4 (as these will be "training" pages) your line 4 would be:
 1,4
-You can turn off randomisation for as many pages as you wish. You may wish to remove it throughout your test - if this is the case, if you have 5 videos your line 4 should be:
-1,2,3,4,5
+You can turn off randomisation for as many page as you wish. You may wish to remove it throughout your test - if you had 6 videos your line 4 would be:
+1,2,3,4,5,6
