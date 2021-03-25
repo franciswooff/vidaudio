@@ -38,7 +38,9 @@ input[type="range"], span{
 margin:0.5rem 0
 }
 span{
-background-color:gray
+background-color:gray;
+padding:0.25rem;
+border-radius:0.3rem
 }
 input[type="submit"]{
 display:block;
