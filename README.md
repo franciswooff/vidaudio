@@ -87,5 +87,5 @@ Additional functionality/features to be added:
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
 should videos autoplay?  
-whether to include sample labels & extra text files in main project folder or restructure (including move of example video & audio files to 2nd folder & ability to include alternate pages - e.g. re requirement 8 above)  
+whether to include sample labels & extra text files in main project folder or restructure (including move of example video & audio files to 2nd folder & ability to include alternate pages - e.g. re requirement 9 above)  
 results mail can be formatted differently (order or separators) if preffered
