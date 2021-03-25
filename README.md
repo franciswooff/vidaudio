@@ -79,11 +79,12 @@ Additional functionality/features to be added:
 8.	Option to make participant number mandatory
 9.	Option to randomise order of test pages
 10.	Check responsiveness (presentation on mobile screen)
-11.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
-12.	Requests for input from UoS students:  
+11.	Check if throttling audio/video sync to a lower frequency improves initial video stuttering
+12.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping 
+13.	Requests for input from UoS students:  
 improve wording of "I agree" label on start page?  
 improve wording of "audio variation" etc. on test page  
 should videos autoplay?  
-whether to include sample labels & extra text files in main project folder or restructure  
+whether to include sample labels & extra text files in main project folder or restructure (including move of example video & audio files to 2nd folder & ability to include alternate pages - e.g. re requirement 8 above)  
 results mail can be formatted differently (order or separators) if preffered 
-13. Add comment re use of dedicated hardware play button to instructions
+13. Check if additional audio to video play/pause syncing solves issue with use of laptop hardware play button/keyboard shortcut. If not add to instructions to warn of issue.
