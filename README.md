@@ -8,7 +8,7 @@ This repository “v3” is based on the simple method of having a muted video e
 **INSTRUCTIONS FOR USE**
 The project is designed to work with little customisation needed to get an initial usable test. The minimum actions needed to use it are:
 
-1.	Download this repository as a zip file (dropdown from the green “Code” button top right of repository) save it & unzip it to a location suitable for you to continue work with it as you prepare your test. From this point onward in these instructions this folder will be referred to as your test folder.
+1.	Download this repository as a zip file (dropdown from the green “Code” button top right of repository) save it & unzip it to a location suitable for you to continue work with it as you prepare your test. By default the zip file may unload to a "folder within a folder", it is the inner folder (containing multiple files & 5 other folders, the same layout as seen above these instructions on GitHub) that you will work with. From this point onward in these instructions this folder will be referred to as your test folder.
 
 2.	While you can work on preparing your test in your test folder on a location such as the hard drive of your PC (or Mac, portable hard drive, USB stick or cloud storage) for the test to run it will need to be placed on a machine running PHP - e.g. a web server (you could install or activate PHP on your Windows PC or Mac & the test will run there, but as your your subjects will need access it needs to be on a web server anyway).  
 For University of Salford students using this test, this article: https://salfordprod.service-now.com/kb_view.do?sysparm_article=KB0010645 “covers basic use of the University service for hosting web content” (obtaining & using a web server account for your test).  
