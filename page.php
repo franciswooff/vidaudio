@@ -23,10 +23,10 @@ if (isset($_POST['page'])) {
     $addr = $vidnoforres.'_'.$trxshufl[$f-1];
     $res = $_POST["fdr".$f];
     if(is_numeric($res)){
-    $comp = $addr.'_'.$res;
-    $_SESSION[$addr] = $comp;
+      $comp = $addr.'_'.$res;
+      $_SESSION[$addr] = $comp;
     } else {
-    exit('<h1>Something nasty here, please try the test again</h1>');
+      exit('<h1>Something nasty here, please try the test again</h1>');
     }
   }
 }
