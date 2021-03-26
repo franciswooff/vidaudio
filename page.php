@@ -80,7 +80,7 @@ $_SESSION["tshuf"]=$trxshufl;
 
 for ($a = 1; $a <= $trxnum; $a++){
   echo '<audio muted loop><source src="audiofiles/'.$cntr.'_'.$trxshufl[$a-1].'.wav" type="audio/mpeg"></audio>
-  ';
+';
 }
 
 echo '<form action="page.php" method="post">
@@ -118,8 +118,9 @@ $cntr ++;
 $_SESSION["vidcount"]=$cntr;
 
 ?>
-<input type="submit" value="Submit" name="page">
+  <input type="submit" value="Submit" name="page">
 </form>
+
 </main>
 </body>
 </html>
