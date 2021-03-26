@@ -18,13 +18,16 @@ h1{
 margin:0.6rem auto;
 color:white
 }
-p{margin-bottom:1rem}
-a{color:white}
-input[type="submit"]{
+p{
+margin-bottom:1rem
+}
+a{
+color:white
+}
+input[type="submit"] {
 padding:0.1rem;
 border-radius:0.3rem;
-background-color:dodgerblue;
-/*actual #005CC8*/
+background-color:dodgerblue
 }
 footer{
 margin-top:3rem;
