@@ -61,8 +61,8 @@ echo '<!doctype html>
 <main>
 <h1>Vidaudio test page '.$cntr.'</h1>
 
-<p>Click on the number below each slider to select a different audio condtion<br>
-Adjust the slider to comparatively rate the variation<br>
+<p>Click on the number below each slider to select a different audio condition<br>
+Adjust the slider to comparatively rate the condition<br>
 Once you are happy with your slider settings comparison click "submit" to move to the next video</p>
 <p>'.file_get_contents('extras/'.$cntr.'.txt').'</p>
 
