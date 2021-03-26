@@ -42,7 +42,6 @@ if (isset($_POST['start'])) {
     exit('<h1>Something nasty here, go back to the previous page &amp; try again</h1>');
   }
 }
-$ptno=$_SESSION["subno"];  //debug only
 
 echo '<!doctype html>
 <html lang="en">
@@ -55,7 +54,6 @@ echo '<!doctype html>
 <script src="vidaud.js" defer></script>
 </head>
 <body>
-<header>participant number '.$ptno.'</header><!--debug only-->
 <main>
 <h1>Vidaudio test page '.$cntr.'</h1>
 
