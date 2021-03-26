@@ -26,7 +26,7 @@ if (isset($_POST['page'])) {
       $comp = $addr.'_'.$res;
       $_SESSION[$addr] = $comp;
     } else {
-      exit('<h1>Something nasty here, please try the test again</h1>');
+      exit('<h1>Something nasty here, try the test again</h1>');
     }
   }
 }
@@ -43,7 +43,7 @@ if (isset($_POST['start'])) {
     $ptno="not set";
     $_SESSION["subno"]=$ptno;
   } else {
-    exit('<h1>Something nasty here, go back to the previous page &amp; try again</h1>');
+    exit('<h1>Something nasty here, go back &amp; try again</h1>');
   }
 }
 
