@@ -66,7 +66,7 @@ Adjust the slider to comparatively rate the condition<br>
 Once you are happy with your slider settings comparison click "submit" to move to the next video</p>
 <p>'.file_get_contents('extras/'.$cntr.'.txt').'</p>
 
-<video src="videofiles/'.$cntr.'.mp4" type="video/mp4" muted loop></video>
+<video src="videofiles/'.$cntr.'.mp4" preload muted loop></video>
 ';
 
 $trxshufl = range(1,$trxnum);
@@ -79,11 +79,12 @@ if (!is_int($serus)) {
 $_SESSION["tshuf"]=$trxshufl;
 
 for ($a = 1; $a <= $trxnum; $a++){
-  echo '<audio muted loop><source src="audiofiles/'.$cntr.'_'.$trxshufl[$a-1].'.wav" type="audio/mpeg"></audio>
+echo '<audio src="audiofiles/'.$cntr.'_'.$trxshufl[$a-1].'.wav" preload muted loop></audio>
 ';
 }
 
-echo '<form action="page.php" method="post">
+echo '
+<form action="page.php" method="post">
   <div class="centr">
     <img src="images/ply.png" alt="play icon"><img src="images/pse.png" alt="pause icon">
   </div>
@@ -105,7 +106,7 @@ $t4 = fgets($tblc);
 $t5 = fgets($tblc);
 fclose('labels/'.$cntr.'.txt');
 
-echo '  <table>
+echo '<table>
     <tr><td>'.$t1.'</td></tr>
     <tr><td>'.$t2.'</td></tr>
     <tr><td>'.$t3.'</td></tr>
