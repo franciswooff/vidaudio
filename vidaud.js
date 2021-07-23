@@ -3,7 +3,7 @@ const aud = document.querySelectorAll('audio');
 const img = document.querySelectorAll('img');
 const slid = document.querySelectorAll('[type=range]');
 const spn = document.querySelectorAll('span');
-const nmbx = document.querySelectorAll('[type=number]');
+//const nmbx = document.querySelectorAll('[type=number]');
 let vt;
 let at;
 
