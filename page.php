@@ -4,7 +4,7 @@ $vidnum = fgets($editme);
 $trxnum = fgets($editme);
 fgets($editme);
 $csv = fgetcsv($editme,300);
-fclose('EDITME.txt');
+fclose($editme);
 
 session_set_cookie_params(3000,"/");
 session_start();
@@ -104,7 +104,7 @@ $t2 = fgets($tblc);
 $t3 = fgets($tblc);
 $t4 = fgets($tblc);
 $t5 = fgets($tblc);
-fclose('labels/'.$cntr.'.txt');
+fclose($tblc);
 
 echo '<table>
     <tr><td>'.$t1.'</td></tr>
