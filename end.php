@@ -20,7 +20,7 @@ $editme = fopen("EDITME.txt", "r") or die('<p>Unable to open your EDITME.txt fil
 $vidnum=fgets($editme);
 $trxnum=fgets($editme);
 $mail=fgets($editme);
-fclose("EDITME.txt");
+fclose($editme);
 
 session_start();
 $subno = $_SESSION["subno"];
