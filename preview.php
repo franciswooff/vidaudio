@@ -67,9 +67,6 @@ $tblc = fopen('labels/'.$v.'.txt', 'r');
 if ($tblc) {
   for ($i = 1; $i <= 5; $i++){
     $t = fgets($tblc);
-    if ($t==false) {
-      $t = 'test';
-    }
     echo '<tr><td>'.$t.'</td></tr>
   ';}
   fclose($tblc);
