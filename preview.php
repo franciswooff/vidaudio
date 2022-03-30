@@ -56,30 +56,27 @@ if (is_int($serus)){
 } else {
   echo '
 <p>These audio tracks will be randomly mapped to the rating sliders on the test page (if you wish to turn this randomisation off for this page see step 11. GitHub README or examples in EDITME.txt)</p>
-';
-}
+';}
 
 echo '<p>The following additional paragraph(s) will appear below the standard instructions on this test page (though not in bold, that is to make it clear what is extra text here):<br><b>'.file_get_contents("extras/".$v.".txt").'</b></p>
+
 <p>The following scale label will appear against the faders on this test page (a border is shown here so you can see the labels are correctly mapped against the 5 available lines):</p>
+<table>
 ';
 $tblc = fopen('labels/'.$v.'.txt', 'r');
-$t1 = fgets($tblc);
-$t2 = fgets($tblc);
-$t3 = fgets($tblc);
-$t4 = fgets($tblc);
-$t5 = fgets($tblc);
-fclose($tblc);
-
-echo '<table>
-  <tr><td>'.$t1.'</td></tr>
-  <tr><td>'.$t2.'</td></tr>
-  <tr><td>'.$t3.'</td></tr>
-  <tr><td>'.$t4.'</td></tr>
-  <tr><td>'.$t5.'</td></tr>
-</table>
+if ($tblc) {
+  for ($i = 1; $i <= 5; $i++){
+    $t = fgets($tblc);
+    if ($t==false) {
+      $t = 'test';
+    }
+    echo '<tr><td>'.$t.'</td></tr>
+  ';}
+  fclose($tblc);
+}
+echo '</table>
 
 ';
-
 }
 
 echo '<p>At the end of the test send the results to this e-mail address: <b>'.$mail.'</b></p>';
