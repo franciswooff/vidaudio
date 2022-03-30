@@ -22,10 +22,10 @@ $csv = fgetcsv($editme,300);
 fclose($editme);
 $aflsno = $vidnum*$trxnum;
 
-$varry = scandir(videofiles);
+$varry = scandir("videofiles");
 $vnox = count($varry);
 $vno = $vnox-2;
-$aarry = scandir(audiofiles);
+$aarry = scandir("audiofiles");
 $anox = count($aarry);
 $ano = $anox-2;
 
