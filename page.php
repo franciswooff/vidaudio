@@ -3,27 +3,29 @@ $editme = fopen('EDITME.txt', 'r') or die('<p>Unable to open your EDITME.txt fil
 $vidnum = fgets($editme);
 $trxnum = fgets($editme);
 fgets($editme);
-$csv = fgetcsv($editme,300);
+fgets($editme);
+$reftrk = fgetcsv($editme,300);
+$pgsNoRdm = fgetcsv($editme,300);
+$rndon = fgets($editme);
+$autoply = fgets($editme);
+$loops = fgets($editme);
 fclose($editme);
+
+$highlttr = chr($trxnum+64);
+$lttr_ary = range('A',$highlttr);
 
 session_set_cookie_params(3000,"/");
 session_start();
 
-$cntr=$_SESSION["vidcount"];
-if(is_null($cntr)){
-  $cntr = 1;
-  $_SESSION["vidcount"]=$cntr;
-}
+$cntr=$_SESSION["pagecount"]??1;
 
-$trxshufl = $_SESSION["tshuf"];
-
-$vidnoforres = $cntr-1;
 if (isset($_POST['page'])) {
-  for ($f = 1; $f <= $trxnum; $f++){
-    $addr = $vidnoforres.'_'.$trxshufl[$f-1];
-    $res = $_POST["fdr".$f];
+  $trxary = $_SESSION["trx_ary"];
+  for ($f = 0; $f < $trxnum; $f++){
+    $addr = ($cntr-1).'_'.$trxary[$f];
+    $res = $_POST["sldr".$f];
     if(is_numeric($res)){
-      $comp = $addr.'_'.$res;
+      $comp = $addr.' , '.$res.' , '.$lttr_ary[$f];
       $_SESSION[$addr] = $comp;
     } else {
       exit('<h1>Something nasty here, try the test again</h1>');
@@ -33,6 +35,7 @@ if (isset($_POST['page'])) {
 
 if ($cntr > $vidnum){
   header("location:end.php");
+  exit();
 }
 
 if (isset($_POST['start'])) {
@@ -47,6 +50,23 @@ if (isset($_POST['start'])) {
   }
 }
 
+$trxary = range(1,$trxnum);
+$schRslt = array_search($cntr,$pgsNoRdm);
+if (!is_int($schRslt)) {
+  shuffle($trxary);
+}
+$_SESSION["trx_ary"]=$trxary;
+
+if ($autoply > chr(32)) {
+  $ap='autoplay';
+} else {
+  $ap='';
+}
+if ($loops > chr(32)) {
+  $lp='loop';
+} else {
+  $lp='';
+}
 echo '<!doctype html>
 <html lang="en">
 <head>
@@ -68,55 +88,53 @@ Once you are happy with your slider settings comparison click "submit" to move t
 
 <video src="videofiles/'.$cntr.'.mp4" preload muted loop></video>
 ';
-
-$trxshufl = range(1,$trxnum);
-$serus = array_search($cntr,$csv);
-
-if (!is_int($serus)) {
-  shuffle($trxshufl);
-}
-
-$_SESSION["tshuf"]=$trxshufl;
-
-for ($a = 1; $a <= $trxnum; $a++){
-echo '<audio src="audiofiles/'.$cntr.'_'.$trxshufl[$a-1].'.wav" preload muted loop></audio>
+$refRslt = array_search($cntr,$reftrk);
+if (is_int($refRslt)) {
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$cntr.'_R.wav" preload muted loop></audio>
 ';
 }
-
+for ($a = 0; $a < $trxnum; $a++){
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$cntr.'_'.$trxary[$a].'.wav" preload muted loop></audio>
+';
+}
 echo '
 <form action="page.php" method="post">
   <div class="centr">
     <img src="images/ply.png" alt="play icon"><img src="images/pse.png" alt="pause icon">
   </div>
   ';
-
-for ($f = 1; $f <= $trxnum; $f++){
+if (is_int($refRslt)) {
   echo '<div class="channel">
-    <input type="range" min="1" max="100" value="50" orient="vertical" name="fdr'.$f.'">
-    <span>50</span>
+    <input type="range" min="1" max="100" value="50" orient="vertical" class="R">
+    <span>R</span>
   </div>
   ';
 }
-
+for ($f = 0; $f < $trxnum; $f++){
+  echo '<div class="channel">
+    <input type="range" min="1" max="100" value="50" orient="vertical" name="sldr'.$f.'">
+    <span>'.$lttr_ary[$f].'</span>
+  </div>
+  ';
+}
 echo '<table>
-';
-$tblc = fopen('labels/'.$cntr.'.txt', 'r');
+  ';
+$tblc = fopen('labels/'.$cntr.'.txt','r');
 if ($tblc) {
   for ($i = 1; $i <= 5; $i++){
     $t = fgets($tblc);
+    $t = str_replace(["\r","\n"],"",$t);
     echo '  <tr><td>'.$t.'</td></tr>
   ';}
   fclose($tblc);
 }
-echo '</table>
-';
+echo '</table>';
 
 $cntr ++;
-$_SESSION["vidcount"]=$cntr;
-
+$_SESSION["pagecount"]=$cntr
 ?>
-  
   <input type="submit" value="Submit" name="page">
+
 </form>
 
 </main>
