@@ -18,9 +18,10 @@ $editme = fopen("EDITME.txt", "r") or die('<p>Unable to open your EDITME.txt fil
 $vidnum = fgets($editme);
 $trxnum = fgets($editme);
 $mail = fgets($editme);
-$csv = fgetcsv($editme,300);
+$pgsNoRdm = fgetcsv($editme,300);
 fclose($editme);
 $aflsno = $vidnum*$trxnum;
+$mail = str_replace(["\r","\n"],"",$mail);
 
 $varry = scandir("videofiles");
 $vnox = count($varry);
@@ -47,9 +48,9 @@ for ($a = 1; $a <= $trxnum; $a++){
 <label>Audio '.$v.'_'.$a.'</label>
 ';}
 
-$serus = array_search($v,$csv);
+$schRslt = array_search($v,$pgsNoRdm);
 
-if (is_int($serus)){
+if (is_int($schRslt)){
   echo '
 <p>You have selected to turn off randomisation of mapping of audio tracks to rating sliders for this test page via line 4 of EDITME.txt</p>
 ';
@@ -67,8 +68,9 @@ $tblc = fopen('labels/'.$v.'.txt', 'r');
 if ($tblc) {
   for ($i = 1; $i <= 5; $i++){
     $t = fgets($tblc);
-    echo '<tr><td>'.$t.'</td></tr>
-  ';}
+    $t = str_replace(["\r","\n"],"",$t);
+    echo '  <tr><td>'.$t.'</td></tr>
+';}
   fclose($tblc);
 }
 echo '</table>
@@ -78,6 +80,7 @@ echo '</table>
 
 echo '<p>At the end of the test send the results to this e-mail address: <b>'.$mail.'</b></p>';
 ?>
+
 <p><a href="index.html" target="_blank">Open the test start page</a> (in a new tab)</p>
 </main>
 </body>
