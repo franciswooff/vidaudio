@@ -3,7 +3,6 @@ const aud = document.querySelectorAll('audio');
 const img = document.querySelectorAll('img');
 const slid = document.querySelectorAll('[type=range]');
 const spn = document.querySelectorAll('span');
-//const nmbx = document.querySelectorAll('[type=number]');
 let vt;
 let at;
 
@@ -34,24 +33,14 @@ aud[0].addEventListener('timeupdate', () => {
 spn.forEach(prsd);
 function prsd(item, index) {
   let x = index;
-  item.addEventListener('click',function(){    
-    let i;
+  item.addEventListener('click',function(){
     for (i = 0; i < spn.length; i++){
       slid[i].style.pointerEvents = "none";
       spn[i].style.backgroundColor = 'gray';
       aud[i].muted = true;
     }
-
   slid[x].style.pointerEvents = "auto";
   spn[x].style.backgroundColor = 'white';
   aud[x].muted = false;
-  })
-}
-
-slid.forEach(slide);
-function slide(item, index) {
-  item.addEventListener('input',function(){
-    let i = index;
-    spn[i].innerHTML = this.value;
   })
 }
