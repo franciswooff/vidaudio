@@ -1,6 +1,6 @@
 <?php
-$editme = fopen('EDITME.txt', 'r') or die('<p>Unable to open your EDITME.txt file</p>');
-$vidnum = fgets($editme);
+$editme = fopen('EDITME.txt', 'r') or die('<p>Unable to open EDITME.txt file</p>');
+$numpages = fgets($editme);
 $trxnum = fgets($editme);
 fgets($editme);
 fgets($editme);
@@ -11,21 +11,25 @@ $autoply = fgets($editme);
 $loops = fgets($editme);
 fclose($editme);
 
-$highlttr = chr($trxnum+64);
-$lttr_ary = range('A',$highlttr);
-
-session_set_cookie_params(3000,"/");
+session_set_cookie_params(3000,'/');
 session_start();
 
-$cntr=$_SESSION["pagecount"]??1;
+$cntr = $_SESSION['pagecount'] ?? 0;
+
+if ($cntr == 0) {
+  $pageary = range(1,$numpages );
+  $_SESSION['pagearray'] = $pageary;
+  $_SESSION['subno'] = 'INTRO PAGE SKIPPED';
+}
 
 if (isset($_POST['page'])) {
-  $trxary = $_SESSION["trx_ary"];
+  $trxary = $_SESSION['trx_ary'];
+  $pageary = $_SESSION['pagearray'];
   for ($f = 0; $f < $trxnum; $f++){
-    $addr = ($cntr-1).'_'.$trxary[$f];
-    $res = $_POST["sldr".$f];
+    $addr = $pageary[$cntr-1].'_'.$trxary[$f];
+    $res = $_POST['sldr'.$f];
     if(is_numeric($res)){
-      $comp = $addr.' , '.$res.' , '.$lttr_ary[$f];
+      $comp = $addr.' , '.$res.' , '.chr($f+65).' , '.$cntr;
       $_SESSION[$addr] = $comp;
     } else {
       exit('<h1>Something nasty here, try the test again</h1>');
@@ -33,29 +37,34 @@ if (isset($_POST['page'])) {
   }
 }
 
-if ($cntr > $vidnum){
-  header("location:end.php");
+if ($cntr >= $numpages){
+  header('location:end.php');
   exit();
 }
 
 if (isset($_POST['start'])) {
-  $ptno = $_POST["partno"];
+  $ptno = $_POST['partno'];
   if(is_numeric($ptno)){
-    $_SESSION["subno"]=$ptno;
-  } else if ($ptno==""){
-    $ptno="not set";
-    $_SESSION["subno"]=$ptno;
+    $_SESSION['subno']=$ptno;
+  } else if ($ptno==''){
+    $ptno='not set';
+    $_SESSION['subno']=$ptno;
   } else {
     exit('<h1>Something nasty here, go back &amp; try again</h1>');
   }
 }
 
+if ($rndon > chr(32) && $cntr == 0) {
+  shuffle($pageary);
+  $_SESSION['pagearray'] = $pageary;
+}
+
 $trxary = range(1,$trxnum);
-$schRslt = array_search($cntr,$pgsNoRdm);
+$schRslt = array_search($pageary[$cntr],$pgsNoRdm);
 if (!is_int($schRslt)) {
   shuffle($trxary);
 }
-$_SESSION["trx_ary"]=$trxary;
+$_SESSION['trx_ary']=$trxary;
 
 if ($autoply > chr(32)) {
   $ap='autoplay';
@@ -67,6 +76,7 @@ if ($loops > chr(32)) {
 } else {
   $lp='';
 }
+
 echo '<!doctype html>
 <html lang="en">
 <head>
@@ -79,22 +89,27 @@ echo '<!doctype html>
 </head>
 <body>
 <main>
-<h1>Vidaudio test page '.$cntr.'</h1>
+<h1>Vidaudio test page '.($cntr+1).'</h1>
 
-<p>Click on the number below each slider to select a different audio condition<br>
+<p>Click on the letter below each slider to select a different audio condition<br>
 Adjust the slider to comparatively rate the condition<br>
-Once you are happy with your slider settings comparison click "submit" to move to the next video</p>
-<p>'.file_get_contents('extras/'.$cntr.'.txt').'</p>
+Once you are happy with your slider settings click "submit" to move to the next video</p>
+<p>';
 
-<video src="videofiles/'.$cntr.'.mp4" preload muted loop></video>
+if (file_exists('extras/'.$pageary[$cntr].'.txt')) {
+  echo file_get_contents('extras/'.$pageary[$cntr].'.txt');
+}
+echo '</p>
+
+<video src="videofiles/'.$pageary[$cntr].'.mp4" preload muted loop></video>
 ';
-$refRslt = array_search($cntr,$reftrk);
+$refRslt = array_search($pageary[$cntr],$reftrk);
 if (is_int($refRslt)) {
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$cntr.'_R.wav" preload muted loop></audio>
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$pageary[$cntr].'_R.wav" preload muted loop></audio>
 ';
 }
 for ($a = 0; $a < $trxnum; $a++){
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$cntr.'_'.$trxary[$a].'.wav" preload muted loop></audio>
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$pageary[$cntr].'_'.$trxary[$a].'.wav" preload muted loop></audio>
 ';
 }
 echo '
@@ -113,17 +128,17 @@ if (is_int($refRslt)) {
 for ($f = 0; $f < $trxnum; $f++){
   echo '<div class="channel">
     <input type="range" min="1" max="100" value="50" orient="vertical" name="sldr'.$f.'">
-    <span>'.$lttr_ary[$f].'</span>
+    <span>'.chr($f+65).'</span>
   </div>
   ';
 }
 echo '<table>
   ';
-$tblc = fopen('labels/'.$cntr.'.txt','r');
-if ($tblc) {
+if (file_exists('labels/'.$pageary[$cntr].'.txt')) {
+  $tblc = fopen('labels/'.$pageary[$cntr].'.txt','r');
   for ($i = 1; $i <= 5; $i++){
     $t = fgets($tblc);
-    $t = str_replace(["\r","\n"],"",$t);
+    $t = str_replace(['\r','\n'],'',$t);
     echo '  <tr><td>'.$t.'</td></tr>
   ';}
   fclose($tblc);
@@ -131,9 +146,9 @@ if ($tblc) {
 echo '</table>';
 
 $cntr ++;
-$_SESSION["pagecount"]=$cntr
+$_SESSION['pagecount']=$cntr
 ?>
-  <input type="submit" value="Submit" name="page">
+  <input type='submit' value='Submit' name='page'>
 
 </form>
 
