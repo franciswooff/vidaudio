@@ -15,14 +15,16 @@
 <p>Thanks for taking part in the test. Your results have been submitted.</p>
 
 <?php
-$editme = fopen("EDITME.txt", "r") or die('<h1>Unable to open your EDITME.txt file</h1>');
+$editme = fopen('EDITME.txt', 'r') or die('<h1>Unable to open EDITME.txt file</h1>');
 $vidnum=fgets($editme);
 $trxnum=fgets($editme);
 $mail=fgets($editme);
 fclose($editme);
 
+$allres = '';
+
 session_start();
-$subno = $_SESSION["subno"];
+$subno = $_SESSION['subno'];
 
 for ($evc = 1; $evc <= $vidnum; $evc++){
   for ($f = 1; $f <= $trxnum; $f++){
@@ -32,7 +34,7 @@ for ($evc = 1; $evc <= $vidnum; $evc++){
   }
 }
 
-mail($mail, "Vidaudio test results for participant number ".$subno, $allres);
+mail($mail, "Vidaudio test results for participant number ".$subno, "Audio File , Rating , Slider Letter , Test Page \r\n".$allres);
 
 session_unset();
 ?>
