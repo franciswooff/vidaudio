@@ -82,7 +82,7 @@ Additional functionality/features to be added:
 9.	Option to make participant number mandatory
 10.	Check if throttling audio/video sync to a lower frequency improves initial video stuttering
 11.	Option to have an extra introductory (instructions etc.) page to any test page
-12.	Option to randomise order of test pages
+12.	~~Option to randomise order of test pages~~
 14.	Introduce small crossfades or silences to avoid audio glitching on track switching & looping
 15.	Check if additional audio to video play/pause syncing solves issue with use of laptop hardware play button/keyboard shortcut. If not add to instructions to warn of issue
 16.	Requests for input from UoS students:  
