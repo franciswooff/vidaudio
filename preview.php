@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Vidaudio v4 preview</title>
+<title>Vidaudio v3.1 preview</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="main.css">
@@ -27,8 +27,10 @@ $autoply = fgets($editme);
 $loops = fgets($editme);
 fclose($editme);
 
-$aflsno = (int)$numpages*(int)$trxnum;
+$noreftrx = count($reftrk);
+$aflsno = ((int)$numpages*(int)$trxnum)+(int)$noreftrx;
 $mail = str_replace(["\r","\n"],"",$mail);
+
 $varry = scandir("videofiles");
 $vnox = count($varry);
 $vno = $vnox-2;
@@ -36,8 +38,14 @@ $aarry = scandir("audiofiles");
 $anox = count($aarry);
 $ano = $anox-2;
 
-echo '<p>Your EDITME text file specifies you will use <b>'.$numpages.'</b> videos/test pages for your test &amp; each video will have <b>'.$trxnum.'</b> audio tracks for subjects to rate (this number does not include a reference track where one is used) so you will need <b>'.$aflsno.'</b> audio files (not including any reference tracks). See the GitHub README for how to name these to appear below.</p>
-<p>Your &quot;videofiles&quot; folder currently contains <b>'.$vno.'</b> files &amp; your &quot;audiofiles&quot; folder <b>'.$ano.'</b> files (your test is set up using the figures from your EDITME.txt file, the numbers of files you have uploaded currently is shown for checking).</p>
+echo '<p>Your EDITME text file specifies you will use <b>'.$numpages.'</b> videos/test pages for your test.<br>
+Your &quot;videofiles&quot; folder currently contains <b>'.$vno.'</b> files.</p>
+
+<p>Each video is set (via EDITME) to have <b>'.$trxnum.'</b> audio tracks for subjects to rate (i.e. not including reference tracks). You have additionally set <b>'.$noreftrx.'</b> pages test to use reference tracks. Therefore you will need <b>'.$aflsno.'</b> ('.$numpages.' x '.$trxnum.' + '.$noreftrx.') audio files.<br>
+Your &quot;audiofiles&quot; folder currently contains <b>'.$ano.'</b> files.</p>
+
+<p>As well as being present in the relevant folders your audio &amp; video files need to be correctly named to appear in the test &amp; in previews below, see the GitHub README for naming convention.</p>
+
 <p>n.b. your videos shouldn&apos;t show here much more than half the width of the page (on a landscape desktop PC monitor). If wider that&apos;s probably too large for (our) use over the net. Something in the range 360 (e.g. 640x360) to 540 (e.g. 960x540) should be enough. No bigger than necessary, on videos especially, is crucially good net etiquette.</p>
 ';
 
@@ -46,6 +54,7 @@ if ($rndon > chr(32)) {
 } else {
   echo '<p>You have selected to turn off randomisation of the order in which the test pages are presented to the test subject.</p>';
 }
+
 if ($autoply > chr(32)) {
     $ap='ON';
   } else {
