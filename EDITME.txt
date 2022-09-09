@@ -15,24 +15,23 @@ The third line is the e-mail address you wish the test results to be sent to.
 n.b. the 2 numbers & mail address must be alone on a line each & those lines must be lines 1, 2 & 3.
 
 Line 4 is intentionally blank to separate the lines below which are optional "switches"
-Lines 5 to 7 select the following for your test:
+Lines 5 to 9 select the following for your test:
 
 5: Creates a reference track button for the specified pages. The format is Comma Separated Values.
-Example: regardless of how many pages you have, if you want to have references on pages 1, 5 & 6 your line 7 would be:
+Example: regardless of how many pages you have, if you want to have references on pages 1, 5 & 6 your line 5 would be:
 1,5,6
 n.b. for each page with a reference track button there needs to be an accompanying reference track, named with an upper case "R" (following the underscore), in the audio files folder - so if you want to use a reference track for page 2 against your 3 audio files (which should be numbered 2_1, 2_2 & 2_3) it would be 2_R (your ref might be copy of one of the other files for a "placebo" value or another file)
-//OR HOW ABOUT YOU GET r BUTTON IF _R present in audio files?
 
 6: Turns OFF randomly linking audio tracks to rating sliders for the specified pages. The format is Comma Separated Values.
-Example: regardless of how many pages you have, if you want to turn off randomisation on pages 1 & 4 (as these will be "training" pages) your line 4 would be:
+Example: regardless of how many pages you have, if you want to turn off randomisation on pages 1 & 4 (as these will be "training" pages) your line 6 would be:
 1,4
 You can turn off randomisation for as many page as you wish. You may wish to remove it throughout your test - if you had 6 videos your line 5 would be:
 1,2,3,4,5,6
 
-7: Turns on randomisation of the order in which your video & associated audio files are presented to the subject to rate (any character on this line will enable randomisation, an empty line will switch it off).
+7: Turns on randomisation of the order in which your video & associated audio files are presented to the subject to rate (any character on line 7 will enable randomisation, an empty line will switch it off).
 
-8: Video & audio files MAY autoplay (any character on this line will enable autoplay, an empty line will switch it off)
+8: Video & audio files MAY autoplay (any character on line 8 will enable autoplay, an empty line will switch it off)
 In the example settings above only this line is left blank, as autoplay of media should be used with caution (asking user consent first is good practice).
 Some browsers suppress autoplay, as of July 22 Chrome allows it (as long as sound for websites generally is enabled), Firefox requires permission granting per site.
 
-9: Video & audio files will loop (any character on this line will enable looping, an empty line will switch it off).
+9: Video & audio files will loop (any character on line 9 will enable looping, an empty line will switch it off).
