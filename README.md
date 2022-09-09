@@ -77,7 +77,7 @@ Additional functionality/features to be added:
 4.	~~Recommend setting for VLC encoder~~
 5.	~~Randomisation of audio track to slider allocation~~
 6.	~~Option to turn above randomisation off for specified pages~~
-7.	Check responsiveness (presentation on mobile screen)
+7.	~~Check responsiveness (presentation on mobile screen)~~
 8.	~~Implement validation of number input from page form (copy from participant number validation)~~
 9.	Option to make participant number mandatory
 10.	Check if throttling audio/video sync to a lower frequency improves initial video stuttering
@@ -87,7 +87,7 @@ Additional functionality/features to be added:
 15.	Check if additional audio to video play/pause syncing solves issue with use of laptop hardware play button/keyboard shortcut. If not add to instructions to warn of issue
 16.	Requests for input from UoS students:  
 ~~improve wording of "I agree" label on start page?  
-improve wording of "audio variation" etc. on test page~~  
-should videos autoplay?  
+improve wording of "audio variation" etc. on test page  
+should videos autoplay?~~  
 whether to include sample labels & extra text files in main project folder or restructure (including move of example video & audio files to 2nd folder & ability to include alternate pages - e.g. re requirement 9 above)  
 results mail can be formatted differently (order or separators) if preffered
