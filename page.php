@@ -11,9 +11,11 @@ $autoply = fgets($editme);
 $loops = fgets($editme);
 fclose($editme);
 
+$numpages = (int)$numpages;
+$trxnum = (int)$trxnum;
+
 session_set_cookie_params(3000,'/');
 session_start();
-
 $cntr = $_SESSION['pagecount'] ?? 0;
 
 if ($cntr == 0) {
@@ -32,7 +34,7 @@ if (isset($_POST['page'])) {
       $comp = $addr.' , '.$res.' , '.chr($f+65).' , '.$cntr;
       $_SESSION[$addr] = $comp;
     } else {
-      exit('<h1>Something nasty here, try the test again</h1>');
+      exit('<h2>Something nasty here, try the test again</h2>');
     }
   }
 }
@@ -50,7 +52,7 @@ if (isset($_POST['start'])) {
     $ptno='not set';
     $_SESSION['subno']=$ptno;
   } else {
-    exit('<h1>Something nasty here, go back &amp; try again</h1>');
+    exit('<h2>Something nasty here, go back &amp; try again</h2>');
   }
 }
 
@@ -60,6 +62,7 @@ if ($rndon > chr(32) && $cntr == 0) {
 }
 
 $trxary = range(1,$trxnum);
+
 $schRslt = array_search($pageary[$cntr],$pgsNoRdm);
 if (!is_int($schRslt)) {
   shuffle($trxary);
@@ -89,29 +92,32 @@ echo '<!doctype html>
 </head>
 <body>
 <main>
-<h1>Vidaudio test page '.($cntr+1).'</h1>
+<h2>Vidaudio test page '.((string)$cntr+1).'</h2>
 
 <p>Click on the letter below each slider to select a different audio condition<br>
 Adjust the slider to comparatively rate the condition<br>
 Once you are happy with your slider settings click "submit" to move to the next video</p>
 <p>';
 
-if (file_exists('extras/'.$pageary[$cntr].'.txt')) {
-  echo file_get_contents('extras/'.$pageary[$cntr].'.txt');
+if (file_exists('extras/'.(string)$pageary[$cntr].'.txt')) {
+  echo file_get_contents('extras/'.(string)$pageary[$cntr].'.txt');
 }
 echo '</p>
 
-<video src="videofiles/'.$pageary[$cntr].'.mp4" preload muted loop></video>
+<video src="videofiles/'.(string)$pageary[$cntr].'.mp4" preload muted loop></video>
 ';
 $refRslt = array_search($pageary[$cntr],$reftrk);
+
 if (is_int($refRslt)) {
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$pageary[$cntr].'_R.wav" preload muted loop></audio>
+
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_R.wav" preload muted loop></audio>
 ';
 }
 for ($a = 0; $a < $trxnum; $a++){
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.$pageary[$cntr].'_'.$trxary[$a].'.wav" preload muted loop></audio>
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_'.$trxary[$a].'.wav" preload muted loop></audio>
 ';
 }
+
 echo '
 <form action="page.php" method="post">
   <div class="centr">
@@ -125,6 +131,7 @@ if (is_int($refRslt)) {
   </div>
   ';
 }
+
 for ($f = 0; $f < $trxnum; $f++){
   echo '<div class="channel">
     <input type="range" min="1" max="100" value="50" orient="vertical" name="sldr'.$f.'">
@@ -132,10 +139,11 @@ for ($f = 0; $f < $trxnum; $f++){
   </div>
   ';
 }
+
 echo '<table>
   ';
-if (file_exists('labels/'.$pageary[$cntr].'.txt')) {
-  $tblc = fopen('labels/'.$pageary[$cntr].'.txt','r');
+if (file_exists('labels/'.(string)$pageary[$cntr].'.txt')) {
+  $tblc = fopen('labels/'.(string)$pageary[$cntr].'.txt','r');
   for ($i = 1; $i <= 5; $i++){
     $t = fgets($tblc);
     $t = str_replace(['\r','\n'],'',$t);
