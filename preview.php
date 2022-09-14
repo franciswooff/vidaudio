@@ -1,19 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<title>Vidaudio v3.1 preview</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="stylesheet" type="text/css" href="preview.css">
-</head>
-<body>
-<main>
-<h2>Vidaudio test preview</h2>
-<h3>Preview page used only by you (the researcher) to preview your files &amp; your test sequence</h3>
-
-<p>Use this page in conjunction with the instructions for the project (the <a href="https://github.com/franciswooff/vidaudio-3#readme" target="_blank">GitHub README</a>). Start by getting your video &amp; audio files correctly named &amp; in place &amp; editing 'EDITME.txt' (steps 1-7 on GitHub). Then check this page &amp; have a run through of your test. Only after you are happy with those look at additional optional steps like adding custom instructions or labels to pages.</p>
-
 <?php
 $editme = fopen('EDITME.txt', 'r') or die('<p>Unable to open EDITME.txt file</p>');
 $numpages = fgets($editme);
@@ -27,12 +11,13 @@ $pgsNoRdm = fgetcsv($editme,300);
 $rndon = fgets($editme);
 $autoply = fgets($editme);
 $loops = fgets($editme);
+$opacty = fgets($editme);
+$reflvl = fgets($editme);
 fclose($editme);
 
 $noreftrx = count($reftrk);
 $aflsno = ((int)$numpages*(int)$trxnum)+$noreftrx;
 $mail = str_replace(["\r","\n"],"",$mail);
-
 $varry = scandir("videofiles");
 $vnox = count($varry);
 $vno = $vnox-2;
@@ -40,10 +25,27 @@ $aarry = scandir("audiofiles");
 $anox = count($aarry);
 $ano = $anox-2;
 
-echo '<p>Your EDITME text file specifies you will use <b>'.$numpages.'</b> videos/test pages for your test.<br>
+echo '<!doctype html>
+<html lang="en">
+<head>
+<title>Vidaudio v3.1 preview</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="preview.css">
+<style>span{opacity:'.str_replace(["\r","\n"],"",$opacty).'}</style>
+</head>
+<body>
+<main>
+<h2>Vidaudio test preview</h2>
+<h3>Preview page used only by you (the researcher) to preview your files &amp; your test sequence</h3>
+
+<p>Use this page in conjunction with the instructions for the project (the <a href="https://github.com/franciswooff/vidaudio-3#readme" target="_blank">GitHub README</a>). Start by getting your video &amp; audio files correctly named &amp; in place &amp; editing the first 3 lines (only) of your "EDITME.txt" file (steps 1-7 on GitHub). Then check this page &amp; have a run through of your test. Only after you are happy with those look at additional optional steps like adding custom instructions or labels to pages, altering the opacity or initial level of sliders, looping &amp; autoplay.</p>
+
+<p>Your EDITME.txt file specifies you will use <b>'.$numpages.'</b> videos/test pages for your test.<br>
 Your &quot;videofiles&quot; folder currently contains <b>'.(string)$vno.'</b> files.</p>
 
-<p>Each video is set (via EDITME) to have <b>'.$trxnum.'</b> audio tracks for subjects to rate (i.e. not including reference tracks). You have additionally set <b>'.(string)$noreftrx.'</b> pages test to use reference tracks. Therefore you will need <b>'.(string)$aflsno.'</b> ('.$numpages.' x '.$trxnum.' + '.(string)$noreftrx.') audio files.<br>
+<p>Each video is set (via EDITME.txt) to have <b>'.$trxnum.'</b> audio tracks for subjects to rate (i.e. not including reference tracks). You have additionally set <b>'.(string)$noreftrx.'</b> pages test to use reference tracks. Therefore you will need <b>'.(string)$aflsno.'</b> ('.$numpages.' x '.$trxnum.' + '.(string)$noreftrx.') audio files.<br>
 Your &quot;audiofiles&quot; folder currently contains <b>'.(string)$ano.'</b> files.</p>
 
 <p>As well as being present in the relevant folders your audio &amp; video files need to be correctly named to appear in the test &amp; in previews below, see the GitHub README for naming convention.</p>
@@ -59,16 +61,20 @@ if ($rndon > chr(32)) {
 
 if ($autoply > chr(32)) {
     $ap='ON';
-  } else {
-    $ap='OFF';
-  }
-  if ($loops > chr(32)) {
-    $lp='ON';
-  } else {
-    $lp='OFF';
-  }
+} else {
+  $ap='OFF';
+}
+if ($loops > chr(32)) {
+  $lp='ON';
+} else {
+  $lp='OFF';
+}
 
 echo '<p>Looping of your video &amp; audio tracks is turned '.$lp.' &amp; autoplay is turned '.$ap.'</p>
+
+<p>If you are using a reference track(s) you can control the opacity of the slider for this from a setting of 0 (fully transparent &amp; so invisible) to 1 (fully opaque). The default setting is 0.5. The setting in your EDITME.txt is <b>'.str_replace(["\r","\n"],"",$opacty).'</b> <span>resulting in the opacity in which this text shows</span>.</p>
+
+<p>You can alter the initial setting of all rating sliders (including the reference track slider) from the default of mid-position. this is set via a number in your EDITME.txt between 0 &amp; 100. The default setting is 50. The setting in your EDITME.txt is <b>'.str_replace(["\r","\n"],"",$reflvl).'</b>.</p>
 
 <p>At the end of the test send the results to this e-mail address: <b>'.$mail.'</b></p>
 ';
@@ -104,9 +110,9 @@ if (is_int($schRslt)){
 ';}
 
 if (file_exists('extras/'.(string)$v.'.txt')) {
-  echo '<p>The following additional paragraph(s) will appear below the standard instructions on this test page (though not in bold/dark red, that is to make it clear what is extra text here):</p>
-  <p><b>'.file_get_contents('extras/'.(string)$v.'.txt').'</b></p>
-';} else {echo '<p>No additional paragraph is set by you to appear below the standard instructions on this test page.</p>
+  echo '<p>The following additional paragraph(s) will appear below the standard instructions on this test page (though not in dark red, that is to make it clear what is extra text here):</p>
+  <p>'.file_get_contents('extras/'.(string)$v.'.txt').'</p>
+';} else {echo '<p>No additional paragraph is set to appear below the standard instructions on this test page.</p>
 ';}
 
 if (file_exists('labels/'.(string)$v.'.txt')) {

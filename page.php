@@ -9,8 +9,9 @@ $pgsNoRdm = fgetcsv($editme,300);
 $rndon = fgets($editme);
 $autoply = fgets($editme);
 $loops = fgets($editme);
+$opacty = fgets($editme);
+$reflvl = fgets($editme);
 fclose($editme);
-
 $numpages = (int)$numpages;
 $trxnum = (int)$trxnum;
 
@@ -62,8 +63,8 @@ if ($rndon > chr(32) && $cntr == 0) {
 }
 
 $trxary = range(1,$trxnum);
-
 $schRslt = array_search($pageary[$cntr],$pgsNoRdm);
+
 if (!is_int($schRslt)) {
   shuffle($trxary);
 }
@@ -88,6 +89,8 @@ echo '<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="stylesheet" type="text/css" href="page.css">
+<style>.R{opacity:'.str_replace(["\r","\n"],"",$opacty).'}
+</style>
 <script src="vidaud.js" defer></script>
 </head>
 <body>
@@ -109,7 +112,6 @@ echo '</p>
 $refRslt = array_search($pageary[$cntr],$reftrk);
 
 if (is_int($refRslt)) {
-
   echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_R.wav" preload muted loop></audio>
 ';
 }
@@ -126,7 +128,7 @@ echo '
   ';
 if (is_int($refRslt)) {
   echo '<div class="channel">
-    <input type="range" min="1" max="100" value="50" orient="vertical" class="R">
+    <input type="range" min="1" max="100" value="'.str_replace(["\r","\n"],"",$reflvl).'" orient="vertical" class="R">
     <span>R</span>
   </div>
   ';
@@ -134,10 +136,11 @@ if (is_int($refRslt)) {
 
 for ($f = 0; $f < $trxnum; $f++){
   echo '<div class="channel">
-    <input type="range" min="1" max="100" value="50" orient="vertical" name="sldr'.$f.'">
+    <input type="range" min="1" max="100" value="'.str_replace(["\r","\n"],"",$reflvl).'" orient="vertical" name="sldr'.$f.'">
     <span>'.chr($f+65).'</span>
   </div>
   ';
+  
 }
 
 echo '<table>
@@ -146,7 +149,7 @@ if (file_exists('labels/'.(string)$pageary[$cntr].'.txt')) {
   $tblc = fopen('labels/'.(string)$pageary[$cntr].'.txt','r');
   for ($i = 1; $i <= 5; $i++){
     $t = fgets($tblc);
-    $t = str_replace(['\r','\n'],'',$t);
+    $t = str_replace(["\r","\n"],"",$t);
     echo '  <tr><td>'.$t.'</td></tr>
   ';}
   fclose($tblc);
