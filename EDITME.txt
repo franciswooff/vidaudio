@@ -7,6 +7,8 @@ you@edu.salford.ac.uk
 randomise
 
 loop
+0.5
+50
 
 Edit the lines above to your values:
 The first line is the number of videos in your test.
@@ -14,7 +16,7 @@ The second line is the number of audio tracks used with each video in your test.
 The third line is the e-mail address you wish the test results to be sent to.
 n.b. the 2 numbers & mail address must be alone on a line each & those lines must be lines 1, 2 & 3.
 
-Line 4 is intentionally blank to separate the lines below which are optional "switches"
+Line 4 is intentionally blank to separate the lines below which are optional "switches" or settings
 Lines 5 to 9 select the following for your test:
 
 5: Creates a reference track button for the specified pages. The format is Comma Separated Values.
@@ -35,3 +37,7 @@ In the example settings above only this line is left blank, as autoplay of media
 Some browsers suppress autoplay, as of July 22 Chrome allows it (as long as sound for websites generally is enabled), Firefox requires permission granting per site.
 
 9: Video & audio files will loop (any character on line 9 will enable looping, an empty line will switch it off).
+
+10: Setting for the opacity of the reference track slider (where one is used). Range from 0 (invisible) to 1 (fully opaque). Default (i.e. setting in the EDITME.txt file as first downloaded) is 0.3.
+
+11: Setting for the initial level of ratings sliders (including reference track slider). Range from 0 (bottom of range) to 100 (top of range). Default (i.e. setting in the EDITME.txt file as first downloaded) is 50.
