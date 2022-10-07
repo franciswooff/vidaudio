@@ -111,7 +111,7 @@ if (is_int($schRslt)){
 
 if (file_exists('extras/'.(string)$v.'.txt')) {
   echo '<p>The following additional paragraph(s) will appear below the standard instructions on this test page (though not in dark red, that is to make it clear what is extra text here):</p>
-  <p>'.file_get_contents('extras/'.(string)$v.'.txt').'</p>
+  <p><b>'.file_get_contents('extras/'.(string)$v.'.txt').'</b></p>
 ';} else {echo '<p>No additional paragraph is set to appear below the standard instructions on this test page.</p>
 ';}
 

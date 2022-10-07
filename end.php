@@ -9,15 +9,14 @@
 
 <body>
 <main>
-
 <h2>Vidaudio test end</h2>
 <p>Thanks for taking part in the test. Your results have been submitted.</p>
 
 <?php
 $editme = fopen('EDITME.txt', 'r') or die('<h2>Unable to open EDITME.txt file</h2>');
-$vidnum=fgets($editme);
-$trxnum=fgets($editme);
-$mail=fgets($editme);
+$vidnum = fgets($editme);
+$trxnum = fgets($editme);
+$mail = fgets($editme);
 fclose($editme);
 
 $allres = "Audio File , Rating , Slider Letter , Test Page \r\n";

@@ -30,7 +30,7 @@ if (isset($_POST['page'])) {
   $pageary = $_SESSION['pagearray'];
   for ($f = 0; $f < $trxnum; $f++){
     $addr = $pageary[$cntr-1].'_'.$trxary[$f];
-    $res = $_POST['sldr'.$f];
+    $res = $_POST[''.$f];
     if(is_numeric($res)){
       $comp = $addr.' , '.$res.' , '.chr($f+65).' , '.$cntr;
       $_SESSION[$addr] = $comp;
@@ -107,16 +107,16 @@ if (file_exists('extras/'.(string)$pageary[$cntr].'.txt')) {
 }
 echo '</p>
 
-<video src="videofiles/'.(string)$pageary[$cntr].'.mp4" preload muted loop></video>
+<video src="videofiles/'.(string)$pageary[$cntr].'.mp4" preload muted></video>
 ';
 $refRslt = array_search($pageary[$cntr],$reftrk);
 
 if (is_int($refRslt)) {
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_R.wav" preload muted loop></audio>
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_R.wav" preload></audio>
 ';
 }
 for ($a = 0; $a < $trxnum; $a++){
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_'.$trxary[$a].'.wav" preload muted loop></audio>
+  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_'.$trxary[$a].'.wav" preload muted></audio>
 ';
 }
 
@@ -136,7 +136,7 @@ if (is_int($refRslt)) {
 
 for ($f = 0; $f < $trxnum; $f++){
   echo '<div class="channel">
-    <input type="range" min="1" max="100" value="'.str_replace(["\r","\n"],"",$reflvl).'" orient="vertical" name="sldr'.$f.'">
+    <input type="range" min="1" max="100" value="'.str_replace(["\r","\n"],"",$reflvl).'" orient="vertical" name="'.$f.'">
     <span>'.chr($f+65).'</span>
   </div>
   ';
