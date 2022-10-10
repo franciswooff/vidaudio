@@ -107,16 +107,16 @@ if (file_exists('extras/'.(string)$pageary[$cntr].'.txt')) {
 }
 echo '</p>
 
-<video src="videofiles/'.(string)$pageary[$cntr].'.mp4" preload muted></video>
+<video src="videofiles/'.(string)$pageary[$cntr].'.mp4" preload muted '.$ap.' '.$lp.'></video>
 ';
 $refRslt = array_search($pageary[$cntr],$reftrk);
 
 if (is_int($refRslt)) {
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_R.wav" preload></audio>
+  echo '<audio src="audiofiles/'.(string)$pageary[$cntr].'_R.wav" preload '.$ap.' '.$lp.'></audio>
 ';
 }
 for ($a = 0; $a < $trxnum; $a++){
-  echo '<audio '.$ap.' '.$lp.' src="audiofiles/'.(string)$pageary[$cntr].'_'.$trxary[$a].'.wav" preload muted></audio>
+  echo '<audio src="audiofiles/'.(string)$pageary[$cntr].'_'.$trxary[$a].'.wav" preload muted '.$ap.' '.$lp.'></audio>
 ';
 }
 
