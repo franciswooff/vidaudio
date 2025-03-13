@@ -38,7 +38,7 @@ mail($mail, "Vidaudio test results for participant number ".$subno, $allres);
 session_unset();
 ?>
 
-<footer>"Vidaudio" test tool by <a href="https://github.com/franciswooff" target="_blank">FrancisWooff</a></footer>
+<footer>"Vidaudio" test tool by <a href="https://franciswooff.net" target="_blank">Francis Wooff</a></footer>
 </main>
 </body>
 </html>
